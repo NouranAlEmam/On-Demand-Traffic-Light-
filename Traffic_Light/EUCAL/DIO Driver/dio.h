@@ -12,7 +12,7 @@
 //CONNCETING FILES
 #include "../../Utilities/BitManipulation.h"
 #include "../../Utilities/Registers.h"
-#include "../Timer Driver/Timer.h"
+
 
 //DIRECTIONS
 #define IN	0

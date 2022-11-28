@@ -8,6 +8,8 @@
 //CONNECTING FILES
 #include "App.h"
 
+uint8_t p=0;
+
 //INITIALIZATION
 void APP_INITIALIZE(void)
 {
@@ -34,25 +36,186 @@ void APP_INITIALIZE(void)
 
 //STARTING APPLICATION
 void APP_START(void)
-{/*
-	uint8_t *p=0;
+{
+	
 				LED_ON(LED_CAR,LED_GREEN_CAR);
 				LED_OFF(LED_CAR,LED_RED_CAR);
 				LED_OFF(LED_CAR,LED_YELLOW_CAR);
 				LED_OFF(LED_PEDESTRIANS,LED_YELLOW_PEDESTRIANS);
 				LED_OFF(LED_PEDESTRIANS,LED_RED_PEDESTRIANS);
 				LED_OFF(LED_PEDESTRIANS,LED_GREEN_PEDESTRIANS);
-				Timer_ON(5000);
-				if (*p==1)
+				for(int i=0;i<50;i++)
 				{
+					Timer_ON(100);
+					if(p == 1)
+					{
+						break;
+					}
+				}
+				
+				if (p==1)
+				{
+					LED_OFF(LED_CAR,LED_GREEN_CAR);
+					LED_ON(LED_PEDESTRIANS,LED_RED_PEDESTRIANS);
 					
-				} 
+					for(int i=0;i<50;i++)
+					{
+						LED_TOGGLE(LED_CAR,LED_YELLOW_CAR);
+						LED_TOGGLE(LED_PEDESTRIANS,LED_YELLOW_PEDESTRIANS);
+						Timer_ON(100);
+					}
+					LED_OFF(LED_PEDESTRIANS,LED_RED_PEDESTRIANS);
+					LED_OFF(LED_CAR,LED_YELLOW_CAR);
+					LED_OFF(LED_PEDESTRIANS,LED_YELLOW_PEDESTRIANS);
+					
+					LED_ON(LED_CAR,LED_RED_CAR);
+					LED_ON(LED_PEDESTRIANS,LED_GREEN_PEDESTRIANS);
+					
+					Timer_ON(5000);
+					LED_OFF(LED_CAR,LED_RED_CAR);
+					
+					
+					for(int i=0;i<50;i++)
+					{
+						LED_TOGGLE(LED_CAR,LED_YELLOW_CAR);
+						LED_TOGGLE(LED_PEDESTRIANS,LED_YELLOW_PEDESTRIANS);
+						Timer_ON(100);
+					}
+					LED_OFF(LED_CAR,LED_YELLOW_CAR);
+					LED_OFF(LED_PEDESTRIANS,LED_YELLOW_PEDESTRIANS);
+					LED_OFF(LED_PEDESTRIANS,LED_GREEN_PEDESTRIANS);
+					
+					LED_ON(LED_CAR,LED_GREEN_CAR);
+					LED_ON(LED_PEDESTRIANS,LED_RED_PEDESTRIANS);
+					Timer_ON(5000);
+				}
+				 
 				else
 				{
+					LED_OFF(LED_CAR,LED_GREEN_CAR);
+					for(int i=0;i<50;i++)
+					{
+						LED_TOGGLE(LED_CAR,LED_YELLOW_CAR);
+						Timer_ON(100);
+						if(p == 1)
+						{
+							break;
+						}
+					}
+					
+					if(p == 1)
+					{
+						LED_ON(LED_PEDESTRIANS,LED_RED_PEDESTRIANS);
+						
+						for(int i=0;i<50;i++)
+						{
+						LED_TOGGLE(LED_CAR,LED_YELLOW_CAR);
+						LED_TOGGLE(LED_PEDESTRIANS,LED_YELLOW_PEDESTRIANS);
+						Timer_ON(100);
+						}
+						LED_OFF(LED_PEDESTRIANS,LED_RED_PEDESTRIANS);
+						LED_OFF(LED_CAR,LED_YELLOW_CAR);
+						LED_OFF(LED_PEDESTRIANS,LED_YELLOW_PEDESTRIANS);
+						
+						LED_ON(LED_CAR,LED_RED_CAR);
+						LED_ON(LED_PEDESTRIANS,LED_GREEN_PEDESTRIANS);
+						Timer_ON(5000);
+					
+						LED_OFF(LED_CAR,LED_RED_CAR);
+						
+						
+						for(int i=0;i<50;i++)
+						{
+							LED_TOGGLE(LED_CAR,LED_YELLOW_CAR);
+							LED_TOGGLE(LED_PEDESTRIANS,LED_YELLOW_PEDESTRIANS);
+							Timer_ON(100);
+						}
+						LED_OFF(LED_CAR,LED_YELLOW_CAR);
+						LED_OFF(LED_PEDESTRIANS,LED_YELLOW_PEDESTRIANS);
+						LED_OFF(LED_PEDESTRIANS,LED_GREEN_PEDESTRIANS);
+						
+						LED_ON(LED_CAR,LED_GREEN_CAR);
+						LED_ON(LED_PEDESTRIANS,LED_RED_PEDESTRIANS);
+						Timer_ON(5000);
+					}
+					
+					else
+					{
+						LED_OFF(LED_CAR,LED_YELLOW_CAR);
+						LED_ON(LED_CAR,LED_RED_CAR);
+						for(int i=0;i<50;i++)
+						{
+							Timer_ON(100);
+							if(p == 1)
+							{
+								break;
+							}
+						}
+						
+						if(p == 1)
+						{
+							LED_ON(LED_PEDESTRIANS,LED_GREEN_PEDESTRIANS);
+							Timer_ON(5000);
+							LED_OFF(LED_PEDESTRIANS,LED_GREEN_PEDESTRIANS);
+							LED_OFF(LED_CAR,LED_RED_CAR);
+						}
+						
+						else
+						{
+							LED_OFF(LED_CAR,LED_RED_CAR);
+							for(int i=0;i<50;i++)
+							{
+								LED_TOGGLE(LED_CAR,LED_YELLOW_CAR);
+								Timer_ON(100);
+								if(p == 1)
+								{
+									break;
+								}
+							}
+							if(p==1)
+							{
+								LED_ON(LED_PEDESTRIANS,LED_RED_PEDESTRIANS);
+								
+								for(int i=0;i<50;i++)
+								{
+									LED_TOGGLE(LED_CAR,LED_YELLOW_CAR);
+									LED_TOGGLE(LED_PEDESTRIANS,LED_YELLOW_PEDESTRIANS);
+									Timer_ON(100);
+								}
+								LED_OFF(LED_PEDESTRIANS,LED_RED_PEDESTRIANS);
+								LED_OFF(LED_CAR,LED_YELLOW_CAR);
+								LED_OFF(LED_PEDESTRIANS,LED_YELLOW_PEDESTRIANS);
+								
+								LED_ON(LED_CAR,LED_RED_CAR);
+								LED_ON(LED_PEDESTRIANS,LED_GREEN_PEDESTRIANS);
+								Timer_ON(5000);
+								
+								LED_OFF(LED_CAR,LED_RED_CAR);
+								
+								
+								for(int i=0;i<50;i++)
+								{
+									LED_TOGGLE(LED_CAR,LED_YELLOW_CAR);
+									LED_TOGGLE(LED_PEDESTRIANS,LED_YELLOW_PEDESTRIANS);
+									Timer_ON(100);
+								}
+								LED_OFF(LED_CAR,LED_YELLOW_CAR);
+								LED_OFF(LED_PEDESTRIANS,LED_YELLOW_PEDESTRIANS);
+								LED_OFF(LED_PEDESTRIANS,LED_GREEN_PEDESTRIANS);
+								
+								LED_ON(LED_CAR,LED_GREEN_CAR);
+								LED_ON(LED_PEDESTRIANS,LED_RED_PEDESTRIANS);
+								Timer_ON(5000);
+							}
+						}
+					}
 				}
+				p=0;
 
-}*/
-IFUN(INT0_VECTOR)
-{
-	
 }
+
+
+// IFUN(INT0_VECTOR)
+// {
+// 	p =1;
+// }

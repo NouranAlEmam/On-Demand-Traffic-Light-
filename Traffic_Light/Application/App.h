@@ -12,8 +12,6 @@
 //CONNECTING FILES
 #include "../HAL/LED Driver/LED.h"
 #include "../HAL/Button Driver/Button.h"
-#include "../EUCAL/Timer Driver/Timer.h"
-#include "../Utilities/Interrupt.h"
 
 //INITIALIZATION
 void APP_INITIALIZE(void);

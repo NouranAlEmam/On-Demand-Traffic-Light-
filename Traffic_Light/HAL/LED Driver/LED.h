@@ -10,6 +10,7 @@
 #define LED_H_
 
 #include "../../EUCAL/DIO Driver/dio.h"
+#include "../../EUCAL/Timer Driver/Timer.h"
 
 //CARS LEDS
 #define LED_GREEN_CAR PIN0			
@@ -30,4 +31,7 @@ void LED_ON(uint8_t ledPort, uint8_t ledPin);
 void LED_OFF(uint8_t ledPort, uint8_t ledPin);
 void LED_TOGGLE(uint8_t ledPort, uint8_t ledPin);
 
+//TEST FUNCTIONS
+void TEST_LED(void);
+void TEST_TIMER(void);
 #endif /* LED_H_ */
