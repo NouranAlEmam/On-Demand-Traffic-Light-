@@ -146,7 +146,7 @@ void APP_START(void)
 {
   c8:	cf 93       	push	r28
   ca:	df 93       	push	r29
-	
+	//FOLLOWING THE FLOWCHART
 				LED_ON(LED_CAR,LED_GREEN_CAR);
   cc:	60 e0       	ldi	r22, 0x00	; 0
   ce:	81 e4       	ldi	r24, 0x41	; 65
@@ -757,7 +757,7 @@ void APP_START(void)
 
 00000436 <__vector_1>:
 
-
+//INTERRUPT
  IFUN(INT0_VECTOR)
  {
  436:	1f 92       	push	r1
