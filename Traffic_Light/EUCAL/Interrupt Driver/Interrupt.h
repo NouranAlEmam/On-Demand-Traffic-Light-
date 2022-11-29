@@ -10,7 +10,7 @@
 #define INTERRUPT_H_
 
 //CONNCETING FILES
-#include "Registers.h"
+#include "../DIO Driver/dio.h"
 
 //ENABLLING INTERRUPT
 # define SEI()  __asm__ __volatile__ ("SEI" ::: "memory")

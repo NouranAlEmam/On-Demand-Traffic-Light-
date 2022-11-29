@@ -9,7 +9,9 @@
 #ifndef BUTTON_H_
 #define BUTTON_H_
 //CONNECTING FILES
-#include "../../EUCAL/DIO Driver/dio.h"
+#include "../../EUCAL/Timer Driver/Timer.h"
+#include "../../EUCAL/Interrupt Driver/Interrupt.h"
+#include "../LED Driver/LED.h"
 
 //BUTTON MACROS
 #define BUTTON_PIN	PIN2			
@@ -19,5 +21,9 @@
 void BUTTON_INITIALIZE(uint8_t buttonPort, uint8_t buttonPin);
 //GET BUTTON STATE
 void BUTTON_READ(uint8_t buttonPort, uint8_t buttonPin, uint8_t* value);
+
+//TEST FUNCTIONS
+void TEST_BUTTON (void);
+void TEST_BUTTON_INTERRUPT (void);
 
 #endif /* BUTTON_H_ */
